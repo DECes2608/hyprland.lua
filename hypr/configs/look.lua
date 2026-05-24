@@ -7,14 +7,10 @@ local primary        = "rgb(aaaaaa)"
 local surface        = "rgb(111111)"
 local secondary      = "rgb(a7a7a7)"
 local error_color    = "rgb(dddddd)"
--- local tertiary    = "rgb(cccccc)"   -- şu an kullanılmıyor
--- local surface_low = "rgb(121212)"   -- şu an kullanılmıyor
-
 
 -- ── Genel Görünüm ────────────────────────────────────
 hl.config({
-    font_family = "Hack Nerd Font Mono",
-
+    -- font_family kaldırıldı (Hyprland mimarisinde geçersizdir)
     general = {
         gaps_in  = 2,
         gaps_out = 2,
@@ -52,25 +48,25 @@ hl.config({
     },
 })
 
-
--- ── Bezier Eğrileri ─────────────────────────────────
-hl.curve("wind",   { type = "bezier", points = { {0.05, 0.9}, {0.1,  1.05} } })
-hl.curve("winIn",  { type = "bezier", points = { {0.1,  1.1}, {0.1,  1.1 } } })
-hl.curve("winOut", { type = "bezier", points = { {0.3, -0.3}, {0,    1   } } })
-hl.curve("liner",  { type = "bezier", points = { {1,   1   }, {1,    1   } } })
-
-
 -- ── Animasyonlar ────────────────────────────────────
-hl.animation({ leaf = "windows",     enabled = true, speed = 6,  bezier = "wind",    style = "slide"     })
-hl.animation({ leaf = "windowsIn",   enabled = true, speed = 6,  bezier = "winIn",   style = "slide 80%" })
-hl.animation({ leaf = "windowsOut",  enabled = true, speed = 5,  bezier = "winOut",  style = "popin 80%" })
-hl.animation({ leaf = "border",      enabled = true, speed = 1,  bezier = "liner"                        })
-hl.animation({ leaf = "borderangle", enabled = true, speed = 30, bezier = "liner",   style = "loop"      })
-hl.animation({ leaf = "fade",        enabled = true, speed = 10, bezier = "default"                      })
-hl.animation({ leaf = "workspaces",  enabled = true, speed = 5,  bezier = "wind",    style = "slide"     })
+hl.animation({ leaf = "windowsMove",     enabled = true, speed = 6,  spring = "spring_window" })
+hl.animation({ leaf = "windowsIn",   enabled = true, speed = 6,  spring = "spring_open" })
+hl.animation({ leaf = "windowsOut",  enabled = true, speed = 5,  spring = "spring_window" })
+--hl.animation({ leaf = "borderangle", enabled = true, speed = 30, bezier = "liner",   style = "loop"      })
+--hl.animation({ leaf = "fade",        enabled = true, speed = 10, style = "spring", spring = "spring_fade" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 5, spring = "spring_workspace" })
 
+-- Spring Curves
 
--- ── Workspace Kalıcılığı ─────────────────────────────
+hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 80, dampening = 14 })
+hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
+hl.curve("spring_open", {type="spring",mass=1,stiffness=30,dampening=8})
+hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 30, dampening = 10 })
+hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
+
 for i = 1, 7 do
-    hl.workspace({ id = i, persistent = true })
+    hl.workspace_rule({
+        workspace = i, -- veya tostring(i)
+        persistent = true,
+    })
 end
