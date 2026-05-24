@@ -7,10 +7,14 @@ local primary        = "rgb(aaaaaa)"
 local surface        = "rgb(111111)"
 local secondary      = "rgb(a7a7a7)"
 local error_color    = "rgb(dddddd)"
+-- local tertiary    = "rgb(cccccc)"   -- şu an kullanılmıyor
+-- local surface_low = "rgb(121212)"   -- şu an kullanılmıyor
+
 
 -- ── Genel Görünüm ────────────────────────────────────
 hl.config({
-    -- font_family kaldırıldı (Hyprland mimarisinde geçersizdir)
+    font_family = "Hack Nerd Font Mono",
+
     general = {
         gaps_in  = 2,
         gaps_out = 2,
@@ -48,11 +52,13 @@ hl.config({
     },
 })
 
+
 -- ── Bezier Eğrileri ─────────────────────────────────
 hl.curve("wind",   { type = "bezier", points = { {0.05, 0.9}, {0.1,  1.05} } })
 hl.curve("winIn",  { type = "bezier", points = { {0.1,  1.1}, {0.1,  1.1 } } })
 hl.curve("winOut", { type = "bezier", points = { {0.3, -0.3}, {0,    1   } } })
 hl.curve("liner",  { type = "bezier", points = { {1,   1   }, {1,    1   } } })
+
 
 -- ── Animasyonlar ────────────────────────────────────
 hl.animation({ leaf = "windows",     enabled = true, speed = 6,  bezier = "wind",    style = "slide"     })
@@ -63,9 +69,8 @@ hl.animation({ leaf = "borderangle", enabled = true, speed = 30, bezier = "liner
 hl.animation({ leaf = "fade",        enabled = true, speed = 10, bezier = "default"                      })
 hl.animation({ leaf = "workspaces",  enabled = true, speed = 5,  bezier = "wind",    style = "slide"     })
 
+
+-- ── Workspace Kalıcılığı ─────────────────────────────
 for i = 1, 7 do
-    hl.workspace_rule({
-        workspace = i, -- veya tostring(i)
-        persistent = true,
-    })
+    hl.workspace({ id = i, persistent = true })
 end
