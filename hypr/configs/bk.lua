@@ -1,11 +1,3 @@
--- ╔══════════════════════════════════════════════════╗
--- ║              configs/basekeys.lua                ║
--- ║                                                  ║
--- ║  Bind seçenekleri:                               ║
--- ║    { locked = true }    → Kilit ekranında çalışır║
--- ║    { repeating = true } → Basılı tutunca tekrarlar║
--- ╚══════════════════════════════════════════════════╝
-
 -- ── Ses ve Medya Tuşları ─────────────────────────────────
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"), { locked = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"), { locked = true })

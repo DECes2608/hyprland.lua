@@ -48,14 +48,6 @@ hl.config({
     },
 })
 
--- ── Animasyonlar ────────────────────────────────────
-hl.animation({ leaf = "windowsMove",     enabled = true, speed = 6,  spring = "spring_window" })
-hl.animation({ leaf = "windowsIn",   enabled = true, speed = 6,  spring = "spring_open" })
-hl.animation({ leaf = "windowsOut",  enabled = true, speed = 5,  spring = "spring_window" })
---hl.animation({ leaf = "borderangle", enabled = true, speed = 30, bezier = "liner",   style = "loop"      })
---hl.animation({ leaf = "fade",        enabled = true, speed = 10, style = "spring", spring = "spring_fade" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 5, spring = "spring_workspace" })
-
 -- Spring Curves
 
 hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 80, dampening = 14 })
@@ -64,9 +56,22 @@ hl.curve("spring_open", {type="spring",mass=1,stiffness=30,dampening=8})
 hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 30, dampening = 10 })
 hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
 
-for i = 1, 7 do
-    hl.workspace_rule({
-        workspace = i, -- veya tostring(i)
-        persistent = true,
-    })
-end
+-- ── Animasyonlar ────────────────────────────────────
+--hl.animation({ leaf = "windowsMove",     enabled = true, speed = 6,  spring = "spring_window" })
+--hl.animation({ leaf = "windowsIn",   enabled = true, speed = 6,  spring = "spring_open" })
+--hl.animation({ leaf = "windowsOut",  enabled = true, speed = 5,  spring = "spring_window" })
+--hl.animation({ leaf = "borderangle", enabled = true, speed = 30, bezier = "liner",   style = "loop"      })
+--hl.animation({ leaf = "fade",        enabled = true, speed = 10, style = "spring", spring = "spring_fade" })
+--hl.animation({ leaf = "workspaces", enabled = true, speed = 5, spring = "spring_workspace" })
+
+hl.animation({
+    leaf = "global",
+    enabled = false
+})
+
+--for i = 1, 7 do
+--    hl.workspace_rule({
+--        workspace = i, -- veya tostring(i)
+--        persistent = true,
+--    })
+--end

@@ -2,6 +2,14 @@
 -- ║               configs/rules.lua                  ║
 -- ╚══════════════════════════════════════════════════╝
 hl.window_rule({
+  name = "ws-helium",
+  match = {
+    class = "helium"
+  },
+  workspace = 1,
+})
+
+hl.window_rule({
   name = "float copyq",
   match = {
     class = "com.github.hluk.copyq"
@@ -45,7 +53,6 @@ hl.window_rule({
     class = "Spotify"
   },
   workspace = 3,
-  opacity = 0.9,
 })
 
 hl.window_rule({
@@ -77,5 +84,14 @@ hl.window_rule({
   match = {
     class = "thunar"
   },
-  opacity = 0.8,
+})
+
+hl.window_rule({
+  name = "pavucontrol",
+  match = {
+    class = "org.pulseaudio.pavucontrol"
+  },
+  float = true,
+  size = {"monitor_w * 0.4", "monitor_h * 0.6"},
+  center = true,
 })
