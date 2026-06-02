@@ -1,0 +1,96 @@
+/* Genel Ayarlar ve Font */
+* {
+    font-family: "Hack Nerd Font Mono", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 0px; /* Keskin kare kenarlar */
+    border: none;
+    min-height: 0; /* Taşıntıları önlemek için temel yükseklik kısıtlaması */
+}
+
+/* Ana Bar Arka Planı */
+window#waybar {
+    background-color: transparent;
+    color: #6e008a;
+    /*    border-bottom: 2px solid #6e008a; */
+}
+
+/* Çalışma Alanları (Workspaces) - Taşmayı önlemek için padding kısıldı */
+#workspaces {
+    margin: 4px 0px;
+}
+
+#workspaces button {
+    padding: 0 6px; /* 12px'den 6px'e düşürüldü */
+    background-color: #111111;
+    color: #6e008a;
+    border-right: 1px solid #222222;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: #111111;
+    color: #ff00ae;
+}
+
+#workspaces button:hover {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #111111;
+    color: #6e008a;
+    animation: blink 0.5s alternate infinite;
+}
+
+/* Saat (Orta Kısım) */
+#clock {
+    background-color: #111111;
+    color: #6e008a;
+    padding: 0 16px;
+    margin: 4px 0px;
+}
+
+/* Sağ Modüller İçin Ortak Stil */
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    margin: 4px 2px;
+    background-color: #111111;
+    color: #6e008a;
+    border: 1px solid #333333;
+}
+
+#network {
+    background-color: #222222;
+}
+
+#pulseaudio {
+    background-color: #1a1a1a;
+}
+
+#tray {
+    background-color: #000000;
+}
+
+/* Tray İkonlarını Siyah/Beyaz Yapma Filtresi */
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray image {
+    opacity: 0.5; /* İkonları %50 soluklaştırarak siyah-beyaza yakın, göz yormayan bir ton verir */
+    transition: opacity 0.2s ease-in-out;
+}
+
+#tray image:hover {
+    opacity: 1; /* Fareyle üzerine gelindiğinde orijinal rengine döner */
+}
+
+/*#tray > .active,
+#tray > .needs-attention {
+    background-color: #ffffff;
+}
+*/

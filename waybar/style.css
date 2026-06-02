@@ -1,0 +1,73 @@
+@import "/home/deces/.config/waybar/dracula.css";
+
+* {
+    font-family:
+        "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Symbols Nerd Font",
+        sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 0px;
+    border: none;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: @bg_bar;
+    color: @text_main;
+}
+
+#custom-bluetooth,
+#cpu,
+#memory,
+#custom-power-mode,
+#network,
+#pulseaudio,
+#tray {
+    padding: 8px 0px;
+    margin: 2px 2px;
+    background-color: @bg_module;
+    color: @text_dim;
+    border: 1px solid @border_module;
+}
+
+#custom-power-mode,
+#network,
+#pulseaudio {
+    background-color: @bg_module;
+}
+
+#workspaces {
+    margin: 2px;
+}
+
+#workspaces button {
+    padding: 6px 0px;
+    background-color: @ws_bg;
+    color: @ws_text;
+    border-bottom: 1px solid @ws_border;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: @ws_active_bg;
+    color: @ws_active_text;
+}
+
+#workspaces button:hover {
+    background-color: @ws_hover_bg;
+    color: @text_main;
+}
+
+#workspaces button.urgent {
+    background-color: #ff5555;
+    color: #f8f8f2;
+    animation: blink 0.5s alternate infinite;
+}
+
+#clock {
+    background-color: @bg_clock;
+    color: @text_main;
+    padding: 8px 0px;
+    margin: 2px 2px;
+    border: 1px solid @border_module;
+}
