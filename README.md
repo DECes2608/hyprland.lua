@@ -8,3 +8,9 @@
 ## bar ---> waybar
 ## notification ---> dunst
 ## wallpaper ---> hyprpaper
+
+### Klonlamak için
+git clone https://github.com/DECes2608/hyprland.lua.git
+
+#### Bilmeyenler için basit açıklama
+klonlanan dosyanın içindeki configlerden istediğinizi seçin ve ~/.config/ klasörüne atın doğrudan .confiğe klonlamak isterseniz dosyalar çakıştığı için hata alabilirsiniz ve "readme" ve "waybar yatay eski" dosyları .config te bulunmuş olur
