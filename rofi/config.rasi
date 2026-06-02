@@ -1,15 +1,14 @@
 configuration {
     show-icons:          false;
-    font:                "Hack Nerd Font Mono 11";
+    font:                "JetBrainsMono Nerd Font 11";
     drun-display-format: "{name}";
 }
 
-* {
-    bg:     #000000;
-    fg:     #ffffff;
-    fg-dim: #ffffff50;
-    sel:    #ffffff15;
+/* Aktif etmek istediğin temanın başındaki yorum satırını (//) kaldır, diğerini kapat */
+@import "colors/dracula.rasi"
+// @import "colors/pure-black.rasi"
 
+* {
     background-color: transparent;
     text-color:       @fg;
 }
@@ -20,7 +19,7 @@ window {
     width:            200px;
     background-color: @bg;
     border:           1px;
-    border-color:     #1a1a1a;
+    border-color:     @border-color; /* Dinamik border rengi */
     padding:          8px;
 }
 
@@ -38,7 +37,7 @@ inputbar {
 }
 
 entry {
-    placeholder:       "???";
+    placeholder:       ":3";
     placeholder-color: @fg-dim;
     text-color:        @fg;
 }
