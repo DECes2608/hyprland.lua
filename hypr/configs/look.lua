@@ -1,7 +1,3 @@
--- ╔══════════════════════════════════════════════════╗
--- ║               configs/look.lua                   ║
--- ╚══════════════════════════════════════════════════╝
-
 -- ── Renk Değişkenleri ───────────────────────────────
 local primary     = "rgb(aaaaaa)"
 local surface     = "rgb(111111)"
@@ -20,13 +16,8 @@ hl.config({
     },
 
     decoration = {
-        rounding = 0,
+        rounding = 5,
         shadow   = { enabled = false },
-    },
-
-    misc = {
-        disable_hyprland_logo   = true,
-        force_default_wallpaper = 0,
     },
 
     group = {

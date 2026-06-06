@@ -29,7 +29,7 @@ hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl --class=backligh
 
 -- ── Ekran Görüntüsü ──────────────────────────────────
 hl.bind("Print", hl.dsp.exec_cmd("bash -c 'grim -g \"$(slurp)\" - | wl-copy'"))
-hl.bind("SUPER + A",
+hl.bind("SUPER + P",
     hl.dsp.exec_cmd(
         "bash -c 'mkdir -p ~/Belgeler/Ekran/ && grim -g \"$(slurp)\" ~/Belgeler/Ekran/$(date +%Y-%m-%d-%H%M%S).png'"))
 

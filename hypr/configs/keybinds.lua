@@ -1,7 +1,8 @@
 -- ── Uygulama Kısayolları ─────────────────────────────
 hl.bind("SUPER + Return", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + D", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind("SUPER + B", hl.dsp.exec_cmd("helium-browser"))
+-- hl.bind("SUPER + B", hl.dsp.exec_cmd("helium-browser"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("zen-browser"))
 -- hl.bind("SUPER + M", hl.dsp.exec_cmd("spotify-launcher"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("thunar"))
@@ -14,8 +15,20 @@ hl.bind("SUPER + Z", hl.dsp.exec_cmd("localsend"))
 hl.bind("SUPER + G", hl.dsp.exec_cmd("~/.config/rofi/power-mode.sh"))
 hl.bind("SUPER + M", hl.dsp.exec_cmd("kitty -e ncspot"))
 
+-- Mevcut aktif pencereyi special workspace'e gönder
+hl.bind("SUPER + A", hl.dsp.window.move({ workspace = "special:" }))
+
+-- Special workspace'i toggle et (göster/gizle)
+hl.bind("SUPER + S", hl.dsp.workspace.toggle_special(""))
+
+-- SUPER + F5 → kaydet
+hl.bind("SUPER + F5", hl.dsp.exec_cmd("hyprdrover save main"))
+
+-- SUPER + F6 → yükle
+hl.bind("SUPER + F6", hl.dsp.exec_cmd("hyprdrover load main"))
+
 -- ── Layout (Düzeltildi) ──────────────────────────────
-hl.bind("SUPER + S", hl.dsp.exec_cmd("hyprctl dispatch layoutmsg focusmaster"))
+-- hl.bind("SUPER + S", hl.dsp.exec_cmd("hyprctl dispatch layoutmsg focusmaster"))
 
 -- ── Waybar / Hyprpaper Yeniden Başlatma ──────────────
 hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/reload_wallpaper.sh"))

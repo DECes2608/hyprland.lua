@@ -1,14 +1,12 @@
+/* İstediğin temanın yolunu buraya yazarak anında değiştirebilirsin */
 @import "/home/deces/.config/waybar/dracula.css";
 
 * {
-    font-family:
-        "JetBrainsMono Nerd Font", "Roboto", "Helvetica", "Symbols Nerd Font",
-        sans-serif;
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", sans-serif;
     font-size: 11px;
     font-weight: bold;
-    border-radius: 0px;
+    border-radius: 6px;
     border: none;
-    min-height: 0;
 }
 
 window#waybar {
@@ -17,34 +15,40 @@ window#waybar {
 }
 
 #custom-bluetooth,
-#cpu,
 #memory,
-#custom-power-mode,
 #network,
 #pulseaudio,
 #tray {
-    padding: 8px 0px;
-    margin: 2px 2px;
+    padding: 10px 0px;
+    margin: 4px 3px;
     background-color: @bg_module;
     color: @text_dim;
     border: 1px solid @border_module;
+    transition: all 0.2s ease;
 }
 
-#custom-power-mode,
-#network,
-#pulseaudio {
-    background-color: @bg_module;
+#custom-bluetooth:hover,
+#memory:hover,
+#network:hover,
+#pulseaudio:hover {
+    background-color: @ws_hover_bg;
+    color: @text_main;
 }
 
 #workspaces {
-    margin: 2px;
+    margin: 4px 3px;
+    background-color: @ws_bg;
+    border: 1px solid @ws_border;
+    border-radius: 6px;
+    padding: 4px 0px;
 }
 
 #workspaces button {
     padding: 6px 0px;
-    background-color: @ws_bg;
+    margin: 2px 0px;
     color: @ws_text;
-    border-bottom: 1px solid @ws_border;
+    background-color: transparent;
+    border-radius: 4px;
 }
 
 #workspaces button.focused,
@@ -64,10 +68,24 @@ window#waybar {
     animation: blink 0.5s alternate infinite;
 }
 
+/* --- Yönetim Merkezi (Special Workspace) Ayarı --- */
+#workspaces button.special {
+    color: @text_dim;
+    border: 1px dashed @border_module; /* Diğerlerinden ayrışması için kesikli çizgi */
+    margin: 4px 2px;
+}
+
+#workspaces button.special.focused,
+#workspaces button.special.active {
+    background-color: @ws_active_bg;
+    color: @ws_active_text;
+    border: 1px solid @ws_active_bg;
+}
+
 #clock {
     background-color: @bg_clock;
     color: @text_main;
-    padding: 8px 0px;
-    margin: 2px 2px;
+    padding: 10px 0px;
+    margin: 4px 3px;
     border: 1px solid @border_module;
 }

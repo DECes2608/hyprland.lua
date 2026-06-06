@@ -1,8 +1,3 @@
--- ╔══════════════════════════════════════════════════╗
--- ║           configs/monitor_input.lua              ║
--- ║  (eski adı: m&i.conf)                            ║
--- ╚══════════════════════════════════════════════════╝
-
 -- ── Monitörler ──────────────────────────────────────
 -- hl.monitor({ output = "HDMI-A-1", mode = "1920x1080@60", position = "1920x0", scale = 1 })
 hl.monitor({ output = "eDP-1", mode = "1920x1080@60.01", position = "0x0", scale = 1 })
@@ -25,10 +20,21 @@ hl.config({
             disable_while_typing = false,
         },
     },
-
     cursor = {
-        no_warps            = true,
-        no_hardware_cursors = true,
+        no_warps             = true,
+        no_hardware_cursors  = true,
+        use_cpu_buffer       = true,
+        sync_gsettings_theme = true,
+    },
+    misc = {
+        vrr                      = 1,
+        disable_hyprland_logo    = true,
+        force_default_wallpaper  = 0,
+        disable_splash_rendering = true,
+    },
+    xwayland = {
+        force_zero_scaling = true,
+        use_nearest_neighbor = true,
     },
 })
 
