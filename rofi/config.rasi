@@ -5,8 +5,8 @@ configuration {
 }
 
 /* Aktif etmek istediğin temanın başındaki yorum satırını (//) kaldır, diğerini kapat */
-@import "colors/dracula.rasi"
-// @import "colors/pure-black.rasi"
+// @import "colors/dracula.rasi"
+@import "colors/pure-black.rasi"
 
 * {
     background-color: transparent;

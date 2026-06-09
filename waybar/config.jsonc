@@ -39,7 +39,7 @@
   },
 
   "clock": {
-    "format": "󰥔\n{:%H\n%M}",
+    "format": "{:%H\n%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
   },
 
@@ -54,7 +54,7 @@
   },
 
   "pulseaudio": {
-    "format": "󰕾\n{volume}%",
+    "format": "{volume}%",
     "format-muted": "󰝟",
     "on-click": "pavucontrol",
   },

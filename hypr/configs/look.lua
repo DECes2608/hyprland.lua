@@ -16,8 +16,9 @@ hl.config({
     },
 
     decoration = {
-        rounding = 5,
+        rounding = 0,
         shadow   = { enabled = false },
+        --        blur     = { enabled = false },
     },
 
     group = {
@@ -38,25 +39,20 @@ hl.config({
     },
 })
 
--- Spring Curves
+-- Spring Curves (Kasmayan, daha dengeli yay değerleri)
+hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 90, dampening = 15 })
+hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 50, dampening = 11 })
+hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 50, dampening = 11 })
+hl.curve("spring_close", { type = "spring", mass = 1, stiffness = 50, dampening = 11 })
+hl.curve("spring_workspace", { type = "spring", mass = 1, stiffness = 55, dampening = 12 })
+hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 50, dampening = 11 })
 
-hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 80, dampening = 14 })
-hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-hl.curve("spring_close", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 30, dampening = 10 })
-hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-
--- ── Animasyonlar ────────────────────────────────────
-hl.animation({ leaf = "windowsMove", enabled = true, speed = 6, spring = "spring_window" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 6, spring = "spring_open" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 5, spring = "spring_window" })
+-- Animasyonlar (Yorum satırlarını kaldırdık ve aktif ettik)
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 5, spring = "spring_window" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 5, spring = "spring_open" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 4, spring = "spring_close" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 5, spring = "spring_workspace" })
 
-hl.animation({
-    leaf = "global",
-    enabled = false
-})
 
 for i = 1, 5 do
     hl.workspace_rule({

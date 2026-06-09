@@ -75,13 +75,6 @@ hl.window_rule({
     workspace = 5,
 })
 
-hl.window_rule({
-    name = "term",
-    match = {
-        class = "kitty",
-    },
-    workspace = 1,
-})
 
 hl.window_rule({
     name = "Spotify",
@@ -100,17 +93,27 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name = "term",
+    match = {
+        class = "kitty",
+    },
+    workspace = 1,
+})
+
+hl.window_rule({
     name = "steam",
     match = {
         class = "steam"
     },
-    workspace = "4",
+    workspace = 4,
+    opacity = 0.85,
 })
 
 hl.window_rule({
     name = "thunar",
     match = {
-        class = "Thunar"
+        class = "thunar"
     },
     workspace = 3,
+    opacity = 0.85,
 })

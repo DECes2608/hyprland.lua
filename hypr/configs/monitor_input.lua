@@ -41,6 +41,6 @@ hl.config({
 -- ── Per-Device Ayarı ────────────────────────────────
 hl.device({
     name          = "synaptics-tm3336-001",
-    sensitivity   = -0.3,
+    sensitivity   = 0.1,
     accel_profile = "adaptive",
 })

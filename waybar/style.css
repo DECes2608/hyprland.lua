@@ -1,11 +1,11 @@
 /* İstediğin temanın yolunu buraya yazarak anında değiştirebilirsin */
-@import "/home/deces/.config/waybar/dracula.css";
+@import "/home/deces/.config/waybar/lain.css";
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", sans-serif;
-    font-size: 11px;
+    font-family: "Press Start 2P", "Symbols Nerd Font", sans-serif;
+    font-size: 8px;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 0px;
     border: none;
 }
 
@@ -39,7 +39,7 @@ window#waybar {
     margin: 4px 3px;
     background-color: @ws_bg;
     border: 1px solid @ws_border;
-    border-radius: 6px;
+    border-radius: 0px;
     padding: 4px 0px;
 }
 
@@ -48,7 +48,7 @@ window#waybar {
     margin: 2px 0px;
     color: @ws_text;
     background-color: transparent;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 
 #workspaces button.focused,

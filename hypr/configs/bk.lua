@@ -28,10 +28,11 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl --class=backlight 
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl --class=backlight set 10%-"))
 
 -- ── Ekran Görüntüsü ──────────────────────────────────
-hl.bind("Print", hl.dsp.exec_cmd("bash -c 'grim -g \"$(slurp)\" - | wl-copy'"))
+hl.bind("Print", hl.dsp.exec_cmd("bash -c 'grim - | wl-copy'"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd("bash -c 'grim -g \"$(slurp)\" - | wl-copy'"))
 hl.bind("SUPER + P",
     hl.dsp.exec_cmd(
-        "bash -c 'mkdir -p ~/Belgeler/Ekran/ && grim -g \"$(slurp)\" ~/Belgeler/Ekran/$(date +%Y-%m-%d-%H%M%S).png'"))
+        "bash -c 'mkdir -p ~/ && grim -g \"$(slurp)\" ~/$(date +%Y-%m-%d-%H%M%S).png'"))
 
 -- ── Yön Tuşları ile Pencere Odağı (Focus) ────────────────
 hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))

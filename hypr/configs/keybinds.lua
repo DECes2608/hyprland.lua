@@ -6,7 +6,7 @@ hl.bind("SUPER + B", hl.dsp.exec_cmd("zen-browser"))
 -- hl.bind("SUPER + M", hl.dsp.exec_cmd("spotify-launcher"))
 hl.bind("SUPER + N", hl.dsp.exec_cmd("obsidian"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("thunar"))
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("steam"))
+-- hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("steam"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd("copyq show"))
 hl.bind("SUPER + C", hl.dsp.exec_cmd("zeditor"))
 hl.bind("SUPER + SHIFT + C", hl.dsp.exec_cmd("code"))
@@ -16,10 +16,10 @@ hl.bind("SUPER + G", hl.dsp.exec_cmd("~/.config/rofi/power-mode.sh"))
 hl.bind("SUPER + M", hl.dsp.exec_cmd("kitty -e ncspot"))
 
 -- Mevcut aktif pencereyi special workspace'e gönder
-hl.bind("SUPER + A", hl.dsp.window.move({ workspace = "special:" }))
+hl.bind("SUPER + A", hl.dsp.window.move({ workspace = "special:0" }))
 
 -- Special workspace'i toggle et (göster/gizle)
-hl.bind("SUPER + S", hl.dsp.workspace.toggle_special(""))
+hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("0"))
 
 -- SUPER + F5 → kaydet
 hl.bind("SUPER + F5", hl.dsp.exec_cmd("hyprdrover save main"))

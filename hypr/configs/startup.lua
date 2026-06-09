@@ -13,4 +13,5 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("copyq")
 end)
 
+
 hl.exec_cmd("hyprshade on saturation")
