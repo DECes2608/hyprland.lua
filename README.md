@@ -1,10 +1,9 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ff81c4be-f603-4fc8-84b4-7cdabc802794" />
-
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/af09f301-d84e-4ed4-a842-c692137f0fe0" />
 
 ---
 ---
 
-## GTK Theme ---> dracula
+## GTK Theme ---> gruvbox
 ## app launcher ---> rofi-wayland
 ## bar ---> waybar
 ## notification ---> dunst
