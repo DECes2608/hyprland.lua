@@ -162,7 +162,7 @@ PACMAN_PKGS=(
 
     # Diğer
     copyq
-    localsend
+    localsend-bin
 )
 
 info "Kurulacak paketler listeleniyor..."
