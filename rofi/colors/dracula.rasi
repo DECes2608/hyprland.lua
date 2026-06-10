@@ -1,8 +1,0 @@
-/* ~/.config/rofi/colors/dracula.rasi */
-* {
-    bg: #282a36; /* Dracula Arka Plan */
-    fg: #f8f8f2; /* Dracula Ön Plan (Kemik Beyazı) */
-    fg-dim: #6272a4; /* Dracula Seçilmeyen/Soluk Metin (Mavi/Gri) */
-    sel: #44475a; /* Dracula Seçili Satır Arka Planı */
-    border-color: #bd93f9; /* Dracula Canlı Mor (Border için efsane durur) */
-}
