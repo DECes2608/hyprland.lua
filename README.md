@@ -4,7 +4,8 @@ Arch Linux üzerine kurulu Hyprland masaüstü ortamı.
 
 ---
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/08f09467-ee03-448d-ab22-a1dcefa4f593" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be4e3eb1-452c-4fba-9b17-b4b611ffe65c" />
+
 
 
 ---
