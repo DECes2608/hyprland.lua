@@ -21,6 +21,13 @@ Arch Linux üzerine kurulu Hyprland masaüstü ortamı.
 
 ## 📦 Kurulum
 
+### Basit kurulum
+
+```bash
+git clone https://github.com/DECes2608/hyprland.lua
+cd hyprland.lua && bash install.sh
+```
+
 ### Temel sistem
 
 ```bash
