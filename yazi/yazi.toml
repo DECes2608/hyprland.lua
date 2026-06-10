@@ -1,0 +1,9 @@
+[opener]
+dragon = [
+  { run = 'xdragon -a -x "$@"', desc = "Sürükle bırak", for = "unix" }
+]
+
+[open]
+rules = [
+  { mime = "*", use = ["dragon", "default"] }
+]
