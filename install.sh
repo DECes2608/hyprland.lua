@@ -155,7 +155,7 @@ PACMAN_PKGS=(
     mpc
 
     # Uygulama başlatıcı
-    rofi
+    rofi-wayland
 
     # Bildirim
     mako
@@ -182,8 +182,6 @@ header "AUR Paketleri"
 
 AUR_PKGS=(
     ncspot
-    hyprshot
-    spicetify-cli
     sioyek
 )
 
@@ -196,27 +194,6 @@ if confirm "AUR paketleri kurulsun mu?"; then
     success "AUR paketleri kuruldu!"
 else
     warning "AUR kurulumu atlandı"
-fi
-
-# ── dragon (sürükle bırak) ────────────────────────────────
-header "Dragon (Sürükle Bırak)"
-
-if command -v dragon &>/dev/null; then
-    success "dragon zaten kurulu"
-else
-    if confirm "dragon kurulsun mu? (kaynak koddan derlenir)"; then
-        info "dragon derleniyor..."
-        tmpdir=$(mktemp -d)
-        git clone https://github.com/mwh/dragon.git "$tmpdir/dragon"
-        cd "$tmpdir/dragon"
-        make
-        sudo make install
-        mkdir -p ~/.local/bin
-        sudo cp /root/.local/bin/dragon ~/.local/bin/ 2>/dev/null || true
-        cd ~
-        rm -rf "$tmpdir"
-        success "dragon kuruldu!"
-    fi
 fi
 
 # ── Fish shell varsayılan kabuk ───────────────────────────
