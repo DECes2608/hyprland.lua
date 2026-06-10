@@ -4,7 +4,7 @@ Arch Linux üzerine kurulu Hyprland masaüstü ortamı.
 
 ---
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/987fc5de-dbaa-418b-8ee1-76693b4b0214" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/08f09467-ee03-448d-ab22-a1dcefa4f593" />
 
 
 ---
@@ -109,7 +109,7 @@ cd yay && makepkg -si
 | `SUPER + Enter` | Terminal (Kitty) |
 | `SUPER + E` | Dosya yöneticisi (Yazi) |
 | `SUPER + M` | Müzik (ncspot) |
-| `SUPER + N` | Editör (Neovim) |
+| `SUPER + C` | Editör (Neovim) |
 | `SUPER + V` | Pano (copyq) |
 | `SUPER + S` | Special workspace toggle |
 | `SUPER + X` | Güç menüsü |
@@ -120,7 +120,7 @@ cd yay && makepkg -si
 
 ## 🎨 Tema
 
-**dagzirvesi** — Dağ duvar kağıdından türetilmiş özel renk paleti.
+**dagzirvesi** — Bir dağın renklerinden türetilmiş özel renk paleti.
 
 | Renk | Hex | Kullanım |
 |------|-----|----------|
