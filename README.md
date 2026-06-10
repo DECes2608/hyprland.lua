@@ -32,7 +32,7 @@ cd hyprland.lua && bash install.sh
 
 ```bash
 sudo pacman -S --needed hyprland waybar hyprpaper dunst kitty \
-  rofi blueman pavucontrol network-manager-applet \
+  rofi-wayland blueman pavucontrol network-manager-applet \
   pipewire pipewire-pulse wireplumber \
   gtk3 gtk4 qt5-wayland qt6-wayland \
   xdg-desktop-portal-hyprland xdg-user-dirs \
