@@ -6,7 +6,8 @@ configuration {
 
 /* Aktif etmek istediğin temanın başındaki yorum satırını (//) kaldır, diğerini kapat */
 // @import "colors/dracula.rasi"
-@import "colors/pure-black.rasi"
+//@import "colors/pure-black.rasi"
+@import "colors/gruvbox.rasi"
 
 * {
     background-color: transparent;
@@ -37,7 +38,7 @@ inputbar {
 }
 
 entry {
-    placeholder:       ":3";
+    placeholder:       "Neden?";
     placeholder-color: @fg-dim;
     text-color:        @fg;
 }
