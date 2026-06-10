@@ -1,4 +1,5 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/af09f301-d84e-4ed4-a842-c692137f0fe0" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/987fc5de-dbaa-418b-8ee1-76693b4b0214" />
+
 
 ---
 ---
@@ -6,8 +7,11 @@
 ## GTK Theme ---> gruvbox
 ## app launcher ---> rofi-wayland
 ## bar ---> waybar
-## notification ---> dunst
+## notification ---> mako
 ## wallpaper ---> hyprpaper
+## dosya ---> yazi
+## müzik ---> ncspot
+## kod ---> nvim (lazyvim)
 
 ### Klonlamak için
 git clone https://github.com/DECes2608/hyprland.lua.git
