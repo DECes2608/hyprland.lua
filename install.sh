@@ -106,8 +106,7 @@ PACMAN_PKGS=(
     pamixer
     playerctl
 
-    # Ağ & bluetooth
-    network-manager-applet
+    # bluetooth
     blueman
 
     # Ekran görüntüsü & clipboard
