@@ -11,7 +11,7 @@ Arch Linux üzerine kurulu Hyprland masaüstü ortamı.
 ---
 ---
 
-## GTK Theme ---> gruvbox
+## GTK Theme ---> meadow (bir çok seçenek var)
 ## app launcher ---> rofi-wayland
 ## bar ---> waybar
 ## notification ---> mako
