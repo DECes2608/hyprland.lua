@@ -14,7 +14,7 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 BOLD='\033[1m'
-NC='\033[0m' # Renk sıfırla
+NC='\033[0m'
 
 # ── Yardımcı fonksiyonlar ─────────────────────────────────
 info()    { echo -e "${CYAN}[→]${NC} $1"; }
@@ -30,7 +30,7 @@ confirm() {
     return 0
 }
 
-# ─────────────────────────────────────────────────────────
+# ── Banner ────────────────────────────────────────────────
 echo -e "${BOLD}"
 echo "  ██╗  ██╗██╗   ██╗██████╗ ██████╗ "
 echo "  ██║  ██║╚██╗ ██╔╝██╔══██╗██╔══██╗"
@@ -45,11 +45,20 @@ echo -e "  ${CYAN}github.com/DECes2608/hyprland.lua${NC}\n"
 # ── Sistem kontrolü ───────────────────────────────────────
 header "Sistem Kontrolü"
 
-# Arch Linux mi?
+# Arch tabanlı mı?
 if ! command -v pacman &>/dev/null; then
-    error "Bu script sadece Arch Linux için tasarlandı!"
+    error "Bu script sadece Arch tabanlı dağıtımlar için tasarlandı!"
 fi
-success "Arch Linux tespit edildi"
+success "Arch tabanlı sistem tespit edildi"
+
+# Garuda kontrolü
+if command -v garuda-update &>/dev/null; then
+    info "Garuda Linux tespit edildi"
+    IS_GARUDA=true
+    success "chaotic-AUR mevcut — AUR paketleri binary olarak kurulabilir"
+else
+    IS_GARUDA=false
+fi
 
 # Root ile çalışıyor mu?
 if [[ $EUID -eq 0 ]]; then
@@ -68,6 +77,10 @@ header "yay (AUR Yardımcısı)"
 
 if command -v yay &>/dev/null; then
     success "yay zaten kurulu: $(yay --version | head -1)"
+elif command -v paru &>/dev/null; then
+    # Garuda'da paru da olabilir, yay yerine kullanabiliriz
+    info "paru tespit edildi, yay yerine paru kullanılacak"
+    AUR_HELPER="paru"
 else
     warning "yay bulunamadı, kuruluyor..."
     info "Önce base-devel ve git kuruluyor..."
@@ -82,6 +95,10 @@ else
     rm -rf "$tmpdir"
     success "yay kuruldu!"
 fi
+
+# AUR helper belirle
+AUR_HELPER="${AUR_HELPER:-yay}"
+success "AUR yardımcısı: $AUR_HELPER"
 
 # ── Temel sistem paketleri ────────────────────────────────
 header "Temel Sistem Paketleri"
@@ -106,7 +123,9 @@ PACMAN_PKGS=(
     pamixer
     playerctl
 
-    # bluetooth
+    # Bluetooth
+    bluez
+    bluez-utils
     blueman
 
     # Ekran görüntüsü & clipboard
@@ -158,13 +177,9 @@ PACMAN_PKGS=(
 
     # Bildirim
     mako
-
-    # Diğer
-    copyq
-    localsend-bin
 )
 
-info "Kurulacak paketler listeleniyor..."
+info "Kurulacak paketler:"
 echo ""
 printf '  %s\n' "${PACMAN_PKGS[@]}" | column
 echo ""
@@ -182,6 +197,8 @@ header "AUR Paketleri"
 AUR_PKGS=(
     ncspot
     sioyek
+    localsend-bin
+    copyq
 )
 
 info "Kurulacak AUR paketleri:"
@@ -189,10 +206,25 @@ printf '  %s\n' "${AUR_PKGS[@]}"
 echo ""
 
 if confirm "AUR paketleri kurulsun mu?"; then
-    yay -S --needed --noconfirm "${AUR_PKGS[@]}"
+    $AUR_HELPER -S --needed --noconfirm "${AUR_PKGS[@]}"
     success "AUR paketleri kuruldu!"
 else
     warning "AUR kurulumu atlandı"
+fi
+
+# ── Servisleri aktif et ───────────────────────────────────
+header "Servis Aktivasyonları"
+
+# Bluetooth
+if confirm "Bluetooth servisi aktif edilsin mi?"; then
+    sudo systemctl enable --now bluetooth.service
+    success "bluetooth.service aktif edildi"
+fi
+
+# MPD (kullanıcı servisi)
+if confirm "MPD servisi aktif edilsin mi?"; then
+    systemctl --user enable --now mpd.service
+    success "mpd.service (kullanıcı) aktif edildi"
 fi
 
 # ── Fish shell varsayılan kabuk ───────────────────────────
@@ -217,23 +249,30 @@ info "Dotfiles dizini: $DOTFILES_DIR"
 info "Config dizini: $CONFIG_DIR"
 echo ""
 
-if confirm "Config dosyaları ~/.config altına kopyalansın mı?"; then
+warning "Symlink kurulumu: Repo'daki değişiklikler otomatik yansır, kopyalama yapılmaz."
+echo ""
+
+if confirm "Config dosyaları ~/.config altına symlink ile bağlansın mı?"; then
     # Yedek al
     BACKUP_DIR="$HOME/.config-backup-$(date +%Y%m%d-%H%M%S)"
     warning "Mevcut config yedekleniyor: $BACKUP_DIR"
     cp -r "$CONFIG_DIR" "$BACKUP_DIR" 2>/dev/null || true
+    success "Yedek alındı: $BACKUP_DIR"
 
-    # Kopyala (varsa)
+    # Symlink kur
     for dir in hypr waybar kitty mako yazi nvim zathura; do
         if [[ -d "$DOTFILES_DIR/$dir" ]]; then
-            info "$dir kopyalanıyor..."
-            cp -r "$DOTFILES_DIR/$dir" "$CONFIG_DIR/"
-            success "$dir kuruldu"
+            # Eğer hedef zaten varsa kaldır
+            [[ -e "$CONFIG_DIR/$dir" || -L "$CONFIG_DIR/$dir" ]] && rm -rf "$CONFIG_DIR/$dir"
+            ln -sf "$DOTFILES_DIR/$dir" "$CONFIG_DIR/$dir"
+            success "$dir → symlink kuruldu"
+        else
+            warning "$dir klasörü repoda bulunamadı, atlanıyor"
         fi
     done
 else
     warning "Dotfiles kurulumu atlandı"
-    info "Manuel kurulum: cp -r <klasör> ~/.config/"
+    info "Manuel kurulum: ln -sf ~/dotfiles/<klasör> ~/.config/"
 fi
 
 # ── Neovim dagzirvesi teması ──────────────────────────────
@@ -241,12 +280,12 @@ header "Neovim Teması (dagzirvesi)"
 
 if confirm "dagzirvesi teması kurulsun mu?"; then
     mkdir -p ~/.config/nvim/colors
-    # Tema dosyası varsa kopyala
     if [[ -f "$DOTFILES_DIR/dagzirvesi.lua" ]]; then
         cp "$DOTFILES_DIR/dagzirvesi.lua" ~/.config/nvim/colors/
         success "dagzirvesi.lua kuruldu"
     else
         warning "dagzirvesi.lua bulunamadı, manuel kopyalaman gerekiyor"
+        info "Beklenen konum: $DOTFILES_DIR/dagzirvesi.lua"
     fi
 fi
 
@@ -254,7 +293,12 @@ fi
 header "PATH Ayarları"
 
 info "~/.local/bin PATH'e ekleniyor..."
-fish -c "fish_add_path ~/.local/bin" 2>/dev/null && success "PATH güncellendi" || warning "Fish ile PATH güncellenemedi, manuel ekle"
+if fish -c "fish_add_path ~/.local/bin" 2>/dev/null; then
+    success "PATH güncellendi"
+else
+    warning "Fish ile PATH güncellenemedi"
+    info "Manuel eklemek için: fish_add_path ~/.local/bin"
+fi
 
 # ── Özet ──────────────────────────────────────────────────
 echo ""
@@ -263,10 +307,11 @@ echo -e "${BOLD}${GREEN}║        Kurulum Tamamlandı! 🏔️         ║${NC}
 echo -e "${BOLD}${GREEN}╚══════════════════════════════════════╝${NC}"
 echo ""
 echo -e "  ${CYAN}Sonraki adımlar:${NC}"
-echo -e "  1. Hyprland'ı yeniden başlat"
-echo -e "  2. ${YELLOW}hyprctl reload${NC} ile config'i yükle"
-echo -e "  3. Neovim'i aç ve ${YELLOW}:Lazy sync${NC} yaz"
-echo -e "  4. Fish için yeni terminal aç"
+echo -e "  1. Sistemi yeniden başlat veya yeniden giriş yap"
+echo -e "  2. Hyprland'ı başlat"
+echo -e "  3. ${YELLOW}hyprctl reload${NC} ile config'i yükle"
+echo -e "  4. Neovim'i aç ve ${YELLOW}:Lazy sync${NC} yaz"
+echo -e "  5. Fish için yeni terminal aç"
 echo ""
 echo -e "  ${CYAN}Sorun olursa:${NC}"
 echo -e "  → Config yedeği: ${YELLOW}~/.config-backup-*${NC}"
