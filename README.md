@@ -1,10 +1,11 @@
-# 🏔️ Hyprland Dotfiles
+# Hyprland Dotfiles
 
 Arch Linux üzerine kurulu Hyprland masaüstü ortamı.
 
 ---
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/be4e3eb1-452c-4fba-9b17-b4b611ffe65c" />
+
+<img width="1920" height="1080" alt="resim" src="https://github.com/user-attachments/assets/bb8b7e62-99b9-47dc-8232-a8aa5a6302a8" />
 
 
 
@@ -119,23 +120,12 @@ cd yay && makepkg -si
 
 ---
 
-## 🎨 Tema
-
-**dagzirvesi** — Bir dağın renklerinden türetilmiş özel renk paleti.
-
-| Renk | Hex | Kullanım |
-|------|-----|----------|
-| Arka plan | `#1a2a2e` | Koyu teal (gökyüzü) |
-| Vurgu | `#c4622a` | Turuncu (kayalıklar) |
-| Metin | `#dce8e8` | Kar beyazı |
-| Teal | `#48a8a8` | Fonksiyon / tip |
-
 Aynı palet Neovim, Mako ve Waybar'da kullanılıyor.
 
 ---
 
 ## 📝 Notlar
 
-- Hyprland config Lua API üzerine kurulu (`0.55.3+`)
+- Hyprland config Lua API üzerine kurulu (`0.55.4+`)
 - PDF önizlemesi için `poppler` gerekli
 EOF
