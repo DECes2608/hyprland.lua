@@ -148,7 +148,6 @@ PACMAN_PKGS=(
     zathura-pdf-mupdf
     poppler
     ffmpegthumbnailer
-    unar
     jq
     fd
     ripgrep
@@ -196,7 +195,6 @@ header "AUR Paketleri"
 
 AUR_PKGS=(
     ncspot
-    sioyek
     localsend-bin
     copyq
 )
