@@ -13,3 +13,11 @@
 @define-color ws_hover_bg #222222;
 
 @define-color bg_clock #1c1c1c;
+
+@define-color warp_bg_connected #16201a;
+@define-color warp_text_connected #a8d8b0;
+@define-color warp_border_connected #2e4a38;
+
+@define-color warp_bg_disconnected #201414;
+@define-color warp_text_disconnected #e06c6c;
+@define-color warp_border_disconnected #4a2e2e;

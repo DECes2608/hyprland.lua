@@ -1,6 +1,6 @@
-/*@import "/home/deces/.config/waybar/gruvbox.css";
-@import "/home/deces/.config/waybar/pure-dark.css";*/
-@import "/home/deces/.config/waybar/waybar_meadow.css";
+/*@import "/home/deces/.config/waybar/gruvbox.css";*/
+@import "/home/deces/.config/waybar/pure-dark.css";
+/*@import "/home/deces/.config/waybar/waybar_meadow.css";*/
 
 
 * {
@@ -121,4 +121,21 @@ clock:hover,
     0%   { border-color: @ws_active_bg; }
     50%  { border-color: @ws_hover_bg; }
     100% { border-color: @ws_active_bg; }
+
+}
+
+#custom-warp.connected {
+    color: @warp_text_connected;
+    background-color: @warp_bg_connected;
+    border: 1px solid @warp_border_connected;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+#custom-warp.disconnected {
+    color: @warp_text_disconnected;
+    background-color: @warp_bg_disconnected;
+    border: 1px solid @warp_border_disconnected;
+    border-radius: 8px;
+    padding: 0 10px;
 }
