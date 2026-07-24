@@ -1,17 +1,16 @@
 # ─── Mako Config ─────────────────────────────────────────
-# Renk paleti: duvar kağıdındaki koyu teal gökyüzü + turuncu
-# kayalıklar + beyaz kar zirvesinden ilham alındı
+# Monochrome / sert köşeli tema
 # ─────────────────────────────────────────────────────────
 
 # Genel görünüm
-background-color=#1a2a2eee
-text-color=#dce8e8
-border-color=#2e5f5f
-progress-color=over #2e5f5faa
+background-color=#0d0d0dee
+text-color=#e8e8e8
+border-color=#4a4a4a
+progress-color=over #6a6a6aaa
 
 border-size=1
-border-radius=8
-padding=12 16
+border-radius=0
+padding=12,16
 
 # Font
 font=monospace 11
@@ -34,23 +33,23 @@ max-icon-size=40
 
 # ─── Urgency: low ────────────────────────────────────────
 [urgency=low]
-background-color=#152022dd
-text-color=#8fb8b8
-border-color=#243f3f
+background-color=#0a0a0add
+text-color=#8a8a8a
+border-color=#333333
 default-timeout=3000
 
 # ─── Urgency: normal ─────────────────────────────────────
 [urgency=normal]
-background-color=#1a2a2eee
-text-color=#dce8e8
-border-color=#2e5f5f
+background-color=#0d0d0dee
+text-color=#e8e8e8
+border-color=#4a4a4a
 default-timeout=5000
 
 # ─── Urgency: high ───────────────────────────────────────
 [urgency=high]
-background-color=#2a1a12ee
-text-color=#f0c090
-border-color=#c4622a
+background-color=#000000ee
+text-color=#ffffff
+border-color=#999999
 default-timeout=0
 
 # ─── Grouped / stacked bildirimler ───────────────────────
