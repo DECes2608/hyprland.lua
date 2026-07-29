@@ -11,7 +11,7 @@ hl.env("GBM_BACKEND", "nvidia-drm")
 hl.env("NVD_BACKEND", "direct")
 
 -- Cursor
-hl.env("HYPRCURSOR_THEME", "Kitty")
+hl.env("HYPRCURSOR_THEME", "Plasma-Overdose")
 hl.env("HYPRCURSOR_SIZE", "14")
 
 -- QT
@@ -30,7 +30,6 @@ hl.env("CLUTTER_BACKEND", "wayland")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
-
 
 --Electron
 --hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")

@@ -6,7 +6,7 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURC
 hl.bind("XF86AudioStop", hl.dsp.exec_cmd("playerctl stop"), { locked = true })
 
 -- ── Temel Pencere Yönetimi (Kapatma, Fullscreen, Floating) ─
-hl.bind("SUPER + Q", hl.dsp.window.close())
+hl.bind("SUPER + SHIFT + Q", hl.dsp.window.close())
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ action = "toggle" }))
 hl.bind("SUPER + Space", hl.dsp.window.float({ action = "toggle" }))
 

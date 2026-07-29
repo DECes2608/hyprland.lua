@@ -46,18 +46,18 @@ hl.config({
 })
 
 -- Spring Curves (Kasmayan, daha dengeli yay değerleri)
-hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 90, dampening = 15 })
-hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 50, dampening = 11 })
-hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 50, dampening = 11 })
-hl.curve("spring_close", { type = "spring", mass = 1, stiffness = 50, dampening = 11 })
-hl.curve("spring_workspace", { type = "spring", mass = 1, stiffness = 55, dampening = 12 })
-hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 50, dampening = 11 })
+hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 1300, dampening = 60 })
+hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 700, dampening = 60 })
+hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 700, dampening = 60 })
+hl.curve("spring_close", { type = "spring", mass = 1, stiffness = 700, dampening = 60 })
+hl.curve("spring_workspace", { type = "spring", mass = 1, stiffness = 700, dampening = 60 })
+hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 700, dampening = 60 })
 
 -- Animasyonlar (Yorum satırlarını kaldırdık ve aktif ettik)
-hl.animation({ leaf = "windowsMove", enabled = true, speed = 5, spring = "spring_window" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 5, spring = "spring_open" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 4, spring = "spring_close" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 5, spring = "spring_workspace" })
+hl.animation({ leaf = "windowsMove", enabled = true, speed = 10, spring = "spring_window" })
+hl.animation({ leaf = "windowsIn", enabled = true, speed = 10, spring = "spring_open" })
+hl.animation({ leaf = "windowsOut", enabled = true, speed = 8, spring = "spring_close" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 10, spring = "spring_workspace" })
 
 for i = 1, 6 do
 	hl.workspace_rule({

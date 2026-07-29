@@ -1,8 +1,8 @@
 -- ── Uygulama Kısayolları ─────────────────────────────
 hl.bind("SUPER + Return", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + D", hl.dsp.exec_cmd("rofi -show drun"))
-hl.bind("SUPER + B", hl.dsp.exec_cmd("helium-browser"))
--- hl.bind("SUPER + B", hl.dsp.exec_cmd("librewolf"))
+-- hl.bind("SUPER + B", hl.dsp.exec_cmd("helium-browser"))
+hl.bind("SUPER + B", hl.dsp.exec_cmd("librewolf"))
 hl.bind("SUPER + M", hl.dsp.exec_cmd("kitty --title ncspot -e ncspot"))
 hl.bind("SUPER + E", hl.dsp.exec_cmd("kitty --title yazi -e yazi"))
 hl.bind("SUPER + C", hl.dsp.exec_cmd("kitty --title nvim -e nvim"))
