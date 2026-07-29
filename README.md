@@ -5,14 +5,15 @@ Arch Linux üzerine kurulu Hyprland masaüstü ortamı.
 ---
 
 
-<img width="1920" height="1080" alt="resim" src="https://github.com/user-attachments/assets/bb8b7e62-99b9-47dc-8232-a8aa5a6302a8" />
+<img width="1920" height="1080" alt="resim" src="https://github.com/user-attachments/assets/dfac6d90-116c-4054-9289-2ed544554d16" />
+
 
 
 
 ---
 ---
 
-## GTK Theme ---> meadow (bir çok seçenek var)
+## GTK Theme ---> Monochrome (bir çok seçenek var)
 ## app launcher ---> rofi-wayland
 ## bar ---> waybar
 ## notification ---> mako
@@ -126,6 +127,6 @@ Aynı palet Neovim, Mako ve Waybar'da kullanılıyor.
 
 ## 📝 Notlar
 
-- Hyprland config Lua API üzerine kurulu (`0.55.4+`)
+- Hyprland config Lua API üzerine kurulu (`0.56.0+`)
 - PDF önizlemesi için `poppler` gerekli
 EOF
