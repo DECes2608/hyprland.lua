@@ -1,0 +1,8 @@
+@define-color bg_bar #0c0c0c;
+@define-color text_main #e6e6e6;
+@define-color text_dim #8a8a8a;
+@define-color ws_text #6b6b6b;
+@define-color ws_active_bg #9f0710;
+@define-color ws_hover_bg #c56a6f;
+@define-color warp_text_connected #9f0710;
+@define-color warp_text_disconnected #cc241d;

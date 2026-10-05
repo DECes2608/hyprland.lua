@@ -1,0 +1,8 @@
+require("configs/bk")
+require("configs/monitor_input")
+require("configs/keybinds")
+require("configs/env")
+require("configs/rules")
+require("configs/startup")
+require("configs/look")
+require("configs/layout")
