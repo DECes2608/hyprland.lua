@@ -18,8 +18,8 @@ Arch Linux üzerine kurulu Hyprland masaüstü ortamı.
 ## bar ---> waybar
 ## notification ---> mako
 ## wallpaper ---> hyprpaper
-## dosya ---> yazi
-## müzik ---> ncspot
+## dosya ---> mautilus/yazi
+## müzik ---> rhythmbox
 ## kod ---> nvim (lazyvim)
 
 ## 📦 Kurulum
@@ -34,7 +34,7 @@ cd hyprland.lua && bash install.sh
 ### Temel sistem
 
 ```bash
-sudo pacman -S --needed hyprland waybar hyprpaper dunst kitty \
+sudo pacman -S --needed hyprland waybar hyprpaper dunst alacritty \
   rofi-wayland blueman pavucontrol network-manager-applet \
   pipewire pipewire-pulse wireplumber \
   gtk3 gtk4 qt5-wayland qt6-wayland \
@@ -61,14 +61,14 @@ sudo pacman -S --needed neovim git lazygit base-devel \
 ### Medya & ses
 
 ```bash
-sudo pacman -S --needed mpd ncmpcpp mpc pamixer
+sudo pacman -S --needed mpd ncmpcpp mpc pamixer rhythmbox
 ```
 
 ### AUR (yay gerekli)
 
 ```bash
-yay -S --needed ncspot localsend \
-sioyek mako \
+yay -S --needed localsend \
+mako \
 ```
 
 ### Yay kurulumu (yoksa)
@@ -111,7 +111,7 @@ cd yay && makepkg -si
 |-----|-------|
 | `SUPER + Enter` | Terminal (Kitty) |
 | `SUPER + E` | Dosya yöneticisi (Yazi) |
-| `SUPER + M` | Müzik (ncspot) |
+| `SUPER + M` | Müzik |
 | `SUPER + C` | Editör (Neovim) |
 | `SUPER + V` | Pano (copyq) |
 | `SUPER + S` | Special workspace toggle |
@@ -127,6 +127,6 @@ Aynı palet Neovim, Mako ve Waybar'da kullanılıyor.
 
 ## 📝 Notlar
 
-- Hyprland config Lua API üzerine kurulu (`0.56.0+`)
+- Hyprland config Lua API üzerine kurulu (`0.56.2+`)
 - PDF önizlemesi için `poppler` gerekli
 EOF
