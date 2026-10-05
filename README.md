@@ -5,8 +5,7 @@ Arch Linux üzerine kurulu Hyprland masaüstü ortamı.
 ---
 
 
-<img width="1920" height="1080" alt="resim" src="https://github.com/user-attachments/assets/dfac6d90-116c-4054-9289-2ed544554d16" />
-
+<img width="1922" height="1080" alt="image" src="https://github.com/user-attachments/assets/36d47ab6-a26a-40af-a62e-81d472c20e07" />
 
 
 
@@ -67,7 +66,7 @@ sudo pacman -S --needed mpd ncmpcpp mpc pamixer rhythmbox
 ### AUR (yay gerekli)
 
 ```bash
-yay -S --needed localsend \
+yay -S --needed localsend-bin \
 mako \
 ```
 
@@ -96,10 +95,6 @@ cd yay && makepkg -si
 ├── kitty/
 ├── mako/
 ├── yazi/
-├── nvim/          # LazyVim
-│   ├── colors/
-│   │   └── dagzirvesi.lua
-│   └── lua/plugins/
 └── zathura/
 ```
 
@@ -129,4 +124,7 @@ Aynı palet Neovim, Mako ve Waybar'da kullanılıyor.
 
 - Hyprland config Lua API üzerine kurulu (`0.56.2+`)
 - PDF önizlemesi için `poppler` gerekli
+- eger istenirse pano yoneticisi olarak rofideki scriptide kullanabilirsiniz
+- buradaki amacim tamamen bana gore en uygun window manager deneyimini mumkun mertebede eksiksiz ve sadece kopy paste ile kendinizin ve benim tekrar yasayabilmemiz
+- install scripti su an icin guncel degildir
 EOF
