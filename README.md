@@ -27,44 +27,57 @@ A minimalist Hyprland desktop environment workflow configured for Arch Linux.
 
 ```bash
 git clone [https://github.com/DECes2608/hyprland.lua](https://github.com/DECes2608/hyprland.lua)
-cd hyprland.lua && bash install.sh```
+cd hyprland.lua && bash install.sh
+```
 
 ### 🔨 Manual Installation
 
 #### Core System Dependencies
 
-```sudo pacman -S --needed hyprland waybar hyprpaper dunst alacritty \
+  ```bash
+  sudo pacman -S --needed hyprland waybar hyprpaper dunst alacritty \
   rofi-wayland blueman pavucontrol network-manager-applet \
   pipewire pipewire-pulse wireplumber \
   gtk3 gtk4 qt5-wayland qt6-wayland \
   xdg-desktop-portal-hyprland xdg-user-dirs \
   polkit-kde-agent grim slurp wl-clipboard \
-  brightnessctl playerctl upower```
+  brightnessctl playerctl upower
+  ```
 
 #### File Management & CLI Utilities
 
-```sudo pacman -S --needed yazi zathura zathura-pdf-mupdf \
+  ```bash
+  sudo pacman -S --needed yazi zathura zathura-pdf-mupdf \
   poppler ffmpegthumbnailer unar jq fd ripgrep \
-  fzf zoxide imagemagick grim slurp```
+  fzf zoxide imagemagick grim slurp
+  ```
 
 #### Development Tools
 
-```sudo pacman -S --needed neovim git lazygit base-devel \
-  nodejs npm python python-pip```
+  ```bash
+  sudo pacman -S --needed neovim git lazygit base-devel \
+  nodejs npm python python-pip
+  ```
 
 #### Media & Audio
 
-```sudo pacman -S --needed mpd ncmpcpp mpc pamixer rhythmbox```
+```bash
+sudo pacman -S --needed mpd ncmpcpp mpc pamixer rhythmbox
+```
 
 #### AUR Packages (Requires yay)
 
-```yay -S --needed localsend-bin mako```
+```bash
+yay -S --needed localsend-bin mako
+```
 
 #### Installing yay (if not present)
 
-```sudo pacman -S --needed git base-devel
+```bash
+sudo pacman -S --needed git base-devel
 git clone [https://aur.archlinux.org/yay.git](https://aur.archlinux.org/yay.git)
-cd yay && makepkg -si```
+cd yay && makepkg -si
+```
 
 ### 🗣️ Explanation
 
